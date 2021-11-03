@@ -1,20 +1,15 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
-
     private EditText user, pass,confirmpass;
     private TextView gagalR,textLogin;
     Button btnRegister;
@@ -44,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
         textLogin=findViewById(R.id.textViewLogin);
         textLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +48,5 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
-
 }

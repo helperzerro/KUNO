@@ -1,27 +1,20 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ThemedSpinnerAdapter;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.myapplication.helper.Helper;
-import java.util.ArrayList;
-import java.util.HashMap;
 
-
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity{
     private Helper db = new Helper(this);
+
     private EditText inputPassword;
     private CheckBox ShowPass;
     private EditText user, pass;
@@ -50,11 +43,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 }
             }
         });
+
         textRegister=findViewById(R.id.textViewRegister);
         textRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -75,33 +69,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 }
             }
         });
-
-    }
-
-    public boolean onNavigationItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()){
-            case R.id.home:
-                //aksi ketika home di klik
-
-                break;
-            case R.id.news:
-                //aksi ketika profile di klik
-
-                break;
-            case R.id.produk:
-                //aksi ketika folder di klik
-
-                break;
-            case R.id.profile:
-                //aksi ketika pesan di klik
-
-                break;
-            case R.id.more:
-                //aksi ketika pesan di klik
-
-                break;
-        }
-        return true;
     }
 
 }
